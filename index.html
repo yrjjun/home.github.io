@@ -1,128 +1,184 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <!-- Meta, title, CSS, favicons, etc. -->
+    <!-- 页面基础 Meta 信息，不需要修改 -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Dmego Home">
-    <meta name="keywords" content="Dmego,Homepage">
-    <meta name="author" content="Dmego">
-    <title>Dmego Home</title>
+    <meta name="description" content="柠雾时夏 Home">
+    <meta name="keywords" content="柠雾时夏,Homepage">
+    <meta name="author" content="柠雾时夏">
+    <!-- 修改浏览器标签栏标题 -->
+    <title>柠雾时夏 Home</title>
+
+    <!-- 引入样式表，无需改动，保持最新版本即可 -->
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/dmego-home-page@latest/assets/css/onlinewebfonts.css"/>
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/dmego-home-page@latest/assets/css/vno.css">
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/dmego-home-page@latest/assets/css/iconfont.css">
+    <!-- 网站图标，无需修改 -->
     <link rel="apple-touch-icon" href="https://unpkg.com/dmego-home-page@latest/apple-touch-icon.png">
     <link rel="icon" href="https://unpkg.com/dmego-home-page@latest/favicon.ico">
 </head>
 
 <body>
+    <!-- 移动端菜单按钮 -->
     <span class="mobile btn-mobile-menu">
         <i class="social iconfont icon-list btn-mobile-menu__icon"></i>
         <i class="social iconfont icon-angleup btn-mobile-close__icon hidden"></i>
     </span>
+
     <header id="panel" class="panel-cover">
         <div class="panel-main">
             <div class="panel-main__inner panel-inverted">
                 <div class="panel-main__content">
-                    <div class="ih-item circle effect right_to_left">            
-                        <a href="#" title="" class="blog-button">
-                            <div class="img"><img src="https://unpkg.com/dmego-home-page@latest/assets/img/logo3.jpg" alt="img" class="js-avatar iUp profilepic"></div>
+
+                    <!-- 头像圆形悬停效果区域 -->
+                    <div class="ih-item circle effect right_to_left">
+                        <!-- 可点击头像按钮 -->
+                        <a href="#" title="博客按钮（可自定义链接）" class="blog-button">
+                            <!-- 
+                                头像图片：
+                                - 已指向本地 assets/img/tx.jpg
+                                - 若要更新，替换文件并保持此路径即可 
+                            -->
+                            <div class="img">
+                                <img src="/assets/img/tx.jpg"
+                                     alt="柠雾时夏 头像"
+                                     class="js-avatar iUp profilepic">
+                            </div>
                             <div class="info iUp">
                                 <div class="info-back">
-                                    <h2> 
-                                        
-                                            Be Brave
-                                        
-                                    </h2>
-                                    <p>
-                                        
-                                            2025 · 勇敢
-                                        
-                                    </p>
+                                    <!-- 大标题，例：座右铭 -->
+                                    <h2>Be Brave</h2>
+                                    <!-- 副标题，可以自定义年份/短语 -->
+                                    <p>2025 · 勇敢</p>
                                 </div>
                             </div>
                         </a>
                     </div>
+
+                    <!-- 主标题：将“Dmego”改为你的名字 -->
                     <h1 class="panel-cover__title panel-title iUp">
-                        <a href="#" title="Dmego Home">Dmego</a>
+                        <a href="#" title="柠雾时夏 Home">柠雾时夏</a>
                     </h1>
+
+                    <!-- 副标题，不是人名就不动，或自行修改 -->
                     <p class="panel-cover__subtitle panel-subtitle iUp">Code Create Life</p>
                     <hr class="panel-cover__divider iUp" />
-                    <p id="description" class="panel-cover__description iUp">如何得与凉风约, 不共尘沙一并来!
-                        <br/>
+
+                    <!-- 页面描述，可按需编辑 -->
+                    <p id="description" class="panel-cover__description iUp">
+                        如何得与凉风约, 不共尘沙一并来!<br/>
                         <strong>-「中牟道中」</strong>
                     </p>
+
+                    <!-- 导航按钮区域 -->
                     <div class="navigation-wrapper iUp">
                         <div>
+                            <!-- 主导航：四个按钮 -->
                             <nav class="cover-navigation cover-navigation--primary">
                                 <ul class="navigation">
+                                    <!-- 1. 首页（保留原始链接） -->
                                     <li class="navigation__item">
                                         <a href="/" class="blog-button">首页</a>
                                     </li>
+                                    <!-- 2. “没” 按钮，示例使用与首页相同链接 -->
                                     <li class="navigation__item">
-                                        <a href="https://dmego.cn" class="blog-button" target="_blank">博客</a>
+                                        <a href="/" class="blog-button">没</a>
                                     </li>
+                                    <!-- 3. “做” 按钮 -->
                                     <li class="navigation__item">
-                                        <a href="https://r.dmego.cn" class="blog-button" target="_blank">简历</a>
+                                        <a href="/" class="blog-button">做</a>
                                     </li>
+                                    <!-- 4. “完” 按钮 -->
                                     <li class="navigation__item">
-                                        <a href="https://dmego.cn/about/" class="blog-button" target="_blank">关于</a>
+                                        <a href="/" class="blog-button">完</a>
                                     </li>
                                 </ul>
                             </nav>
                         </div>
                         <div class="iUp">
+                            <!-- 社交导航：GitHub / LINUX DO / Email -->
                             <nav class="cover-navigation navigation--social">
                                 <ul class="navigation">
+                                    <!-- 
+                                        1. GitHub 入口：
+                                        - 链接到你的 GitHub 个人主页 
+                                    -->
                                     <li class="navigation__item">
-                                        <a href="https://github.com/dmego/" title="github" target="_blank">
-                                            <i class='social iconfont icon-github'></i>
-                                            <span class="label">github</span>
+                                        <a href="https://github.com/yrjjun"
+                                           title="GitHub: yrjjun"
+                                           target="_blank">
+                                            <i class="social iconfont icon-github"></i>
+                                            <span class="label">yrjjun</span>
                                         </a>
                                     </li>
+                                    <!-- 
+                                        2. & 3. 合并为 LINUX DO 长按钮：
+                                        - icon 替换为纯文字 “LINUX DO”
+                                        - 链接到你的 Linux.do 个人总结页 
+                                    -->
                                     <li class="navigation__item">
-                                        <a href="http://www.cnblogs.com/dmego/" title="cnblogs" target="_blank">
-                                            <i class='social iconfont icon-cnblogs'></i>
-                                            <span class="label">cnblogs</span>
+                                        <a href="https://linux.do/u/yrjjun/summary"
+                                           title="LINUX DO"
+                                           target="_blank">
+                                            <!-- 如果你使用 iconfont，可以去掉下面的 <i> -->
+                                            <span class="icon-text">LINUX DO</span>
+                                            <span class="label">LINUX DO</span>
                                         </a>
                                     </li>
-
+                                    <!-- 
+                                        4. Email 按钮：
+                                        - 改为你的邮箱地址
+                                        - 使用 mailto 协议可直接弹出邮件客户端 
+                                    -->
                                     <li class="navigation__item">
-                                        <a href="https://www.zhihu.com/people/dmego/" title="zhihu" target="_blank">
-                                            <i class='social iconfont icon-zhihu'></i>
-                                            <span class="label">zhihu</span>
-                                        </a>
-                                    </li>
-                                    <li class="navigation__item">
-                                        <!-- 加密的邮箱地址, 请自行修改, 或者改用下方的明文方式 -->
-                                        <a href="javascript:decryptEmail('ZG1lYWdvQGdtYWlsLmNvbQ==');" title="email">
-                                        <!-- <a href="test@test.com" title="email"> -->
-                                            <i class='social iconfont icon-email'></i>
-                                            <span class="label">email</span>
+                                        <a href="mailto:yrjjun@outlook.com"
+                                           title="Email: yrjjun@outlook.com">
+                                            <i class="social iconfont icon-email"></i>
+                                            <span class="label">yrjjun@outlook.com</span>
                                         </a>
                                     </li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
+
                 </div>
             </div>
+
+            <!-- 半透明遮罩层 -->
             <div class="panel-cover--overlay cover-slate"></div>
         </div>
-        <!-- <div class="beian iUp">
-            <a class="icp" href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank">XXX</a>
-            <a class="gwab" href="http://www.beian.gov.cn/portal/recordQuery" target="_blank">XXX</a>
-        </div> -->
+
+        <!-- 底部版权 / 技术来源说明 -->
         <div class="remark iUp">
-            <p class="power">Powered By 
-                <a href="https://github.com/features/actions" target="_blank"> GitHub Actions </a> And 
-                <a href="https://hitokoto.cn/" target="_blank"> Hitokoto </a>
+            <p class="power">
+                Powered By 
+                <a href="https://github.com/features/actions" target="_blank">GitHub Actions</a>
+                And
+                <a href="https://hitokoto.cn/" target="_blank">Hitokoto</a>
             </p>
         </div>
+
+        <!-- 
+            支持图片横幅占位：
+            - 当你准备好横着的照片后，把此 <img> 的 src 改为真实路径
+            - 也可改成其他链接/样式 
+        -->
+        <div class="support-image iUp">
+            <a href="#" title="支持本站">
+                <img src="/assets/img/support-placeholder.jpg"
+                     alt="支持本站横幅"
+                     style="max-width:100%; height:auto;">
+            </a>
+        </div>
+
     </header>
+
+    <!-- 主脚本，无需修改 -->
     <script type="text/javascript" src="https://unpkg.com/dmego-home-page@latest/assets/js/main.js"></script>
+    <!-- 后台随机图片 JSON，无需改动 -->
     <script type="text/javascript" src="./assets/json/images.json?cb=getBingImages"></script>
 </body>
 </html>
