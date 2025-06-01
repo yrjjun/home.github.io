@@ -21,39 +21,74 @@
 
     <!-- 六一儿童节彩蛋装饰样式 -->
     <style>
-        /* 彩色气球动画 */
+        /* 真正的气球形状 */
         .balloon {
             position: fixed;
-            width: 30px;
-            height: 40px;
+            width: 40px;
+            height: 50px;
             border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
             animation: float 6s ease-in-out infinite;
             z-index: 1000;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow:
+                inset -10px -10px 0 rgba(0,0,0,0.1),
+                0 5px 15px rgba(0,0,0,0.2);
         }
 
         .balloon:hover {
-            transform: scale(1.2);
+            transform: scale(1.15) rotate(5deg);
+            filter: brightness(1.1);
         }
 
         .balloon::after {
             content: '';
             position: absolute;
-            width: 1px;
-            height: 50px;
-            background: #333;
-            bottom: -50px;
+            width: 2px;
+            height: 60px;
+            background: linear-gradient(to bottom, #666, #333);
+            bottom: -60px;
             left: 50%;
             transform: translateX(-50%);
+            border-radius: 1px;
         }
 
-        .balloon-1 { background: #ff6b6b; top: 20%; left: 5%; animation-delay: 0s; }
-        .balloon-2 { background: #4ecdc4; top: 30%; right: 8%; animation-delay: 1s; }
-        .balloon-3 { background: #45b7d1; top: 15%; left: 15%; animation-delay: 2s; }
-        .balloon-4 { background: #f9ca24; top: 25%; right: 15%; animation-delay: 3s; }
-        .balloon-5 { background: #f0932b; top: 35%; left: 8%; animation-delay: 4s; }
-        .balloon-6 { background: #eb4d4b; top: 40%; right: 5%; animation-delay: 5s; }
+        .balloon::before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: inherit;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            filter: brightness(0.8);
+        }
+
+        .balloon-1 {
+            background: linear-gradient(135deg, #ff6b6b, #ff5252);
+            top: 15%; left: 3%; animation-delay: 0s;
+        }
+        .balloon-2 {
+            background: linear-gradient(135deg, #4ecdc4, #26a69a);
+            top: 25%; right: 5%; animation-delay: 1s;
+        }
+        .balloon-3 {
+            background: linear-gradient(135deg, #45b7d1, #2196f3);
+            top: 10%; left: 12%; animation-delay: 2s;
+        }
+        .balloon-4 {
+            background: linear-gradient(135deg, #f9ca24, #f39c12);
+            top: 20%; right: 12%; animation-delay: 3s;
+        }
+        .balloon-5 {
+            background: linear-gradient(135deg, #f0932b, #e67e22);
+            top: 30%; left: 6%; animation-delay: 4s;
+        }
+        .balloon-6 {
+            background: linear-gradient(135deg, #eb4d4b, #c0392b);
+            top: 35%; right: 8%; animation-delay: 5s;
+        }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -61,87 +96,134 @@
             66% { transform: translateY(-10px) rotate(-1deg); }
         }
 
-        /* 彩虹装饰 */
+        /* 更精美的彩虹装饰 */
         .rainbow {
             position: fixed;
-            top: 10px;
-            right: 20px;
-            width: 100px;
-            height: 50px;
+            top: 15px;
+            right: 25px;
+            width: 120px;
+            height: 60px;
             background: linear-gradient(90deg,
-                #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
-            border-radius: 100px 100px 0 0;
-            opacity: 0.8;
+                #ff0000 0%, #ff7f00 16.66%, #ffff00 33.33%,
+                #00ff00 50%, #0000ff 66.66%, #4b0082 83.33%, #9400d3 100%);
+            border-radius: 120px 120px 0 0;
+            opacity: 0.85;
             z-index: 999;
-            animation: rainbow-glow 3s ease-in-out infinite alternate;
+            animation: rainbow-glow 4s ease-in-out infinite alternate;
+            box-shadow: 0 4px 20px rgba(255,255,255,0.3);
+        }
+
+        .rainbow::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 0;
+            background: linear-gradient(90deg,
+                rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.3) 100%);
+            border-radius: 104px 104px 0 0;
         }
 
         @keyframes rainbow-glow {
-            0% { opacity: 0.6; transform: scale(1); }
-            100% { opacity: 0.9; transform: scale(1.05); }
+            0% { opacity: 0.7; transform: scale(1) translateY(0px); }
+            100% { opacity: 0.95; transform: scale(1.08) translateY(-2px); }
         }
 
-        /* 六一祝福文字 */
+        /* 精美的六一祝福卡片 */
         .children-day-wish {
             position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 10px 15px;
-            border-radius: 20px;
-            font-size: 14px;
+            bottom: 25px;
+            left: 25px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,249,250,0.95));
+            padding: 15px 20px;
+            border-radius: 25px;
+            font-size: 15px;
             color: #ff6b6b;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-weight: 600;
+            box-shadow:
+                0 8px 32px rgba(255,107,107,0.2),
+                0 4px 16px rgba(0,0,0,0.1);
             z-index: 1001;
-            animation: wish-pulse 2s ease-in-out infinite;
+            animation: wish-pulse 3s ease-in-out infinite;
             cursor: pointer;
+            border: 2px solid rgba(255,107,107,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .children-day-wish:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                0 12px 40px rgba(255,107,107,0.3),
+                0 6px 20px rgba(0,0,0,0.15);
         }
 
         @keyframes wish-pulse {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            50% { transform: scale(1.02); }
         }
 
-        /* 星星闪烁效果 */
+        /* 更美的星星效果 */
         .star {
             position: fixed;
-            color: #ffd700;
-            font-size: 20px;
-            animation: twinkle 2s ease-in-out infinite;
+            font-size: 24px;
+            animation: twinkle 3s ease-in-out infinite;
             z-index: 998;
             pointer-events: none;
+            filter: drop-shadow(0 0 6px currentColor);
         }
 
-        .star-1 { top: 10%; left: 25%; animation-delay: 0s; }
-        .star-2 { top: 20%; right: 25%; animation-delay: 0.5s; }
-        .star-3 { top: 60%; left: 10%; animation-delay: 1s; }
-        .star-4 { top: 70%; right: 20%; animation-delay: 1.5s; }
+        .star-1 { top: 8%; left: 20%; animation-delay: 0s; color: #ffd700; }
+        .star-2 { top: 18%; right: 30%; animation-delay: 0.8s; color: #ff69b4; }
+        .star-3 { top: 55%; left: 8%; animation-delay: 1.6s; color: #00bfff; }
+        .star-4 { top: 65%; right: 15%; animation-delay: 2.4s; color: #98fb98; }
 
         @keyframes twinkle {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.2); }
+            0%, 100% { opacity: 0.4; transform: scale(1) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1.3) rotate(180deg); }
         }
 
-        /* 隐藏彩蛋的开关 */
-        .easter-egg-toggle {
+        /* 隐蔽的魔法按钮 */
+        .magic-toggle {
             position: fixed;
-            top: 20px;
-            left: 20px;
-            background: #ff6b6b;
-            color: white;
+            bottom: 25px;
+            right: 25px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border: none;
-            padding: 8px 12px;
-            border-radius: 15px;
-            font-size: 12px;
+            border-radius: 50%;
+            font-size: 20px;
             cursor: pointer;
             z-index: 1002;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow:
+                0 6px 20px rgba(102,126,234,0.4),
+                0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .magic-toggle:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow:
+                0 8px 25px rgba(102,126,234,0.5),
+                0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .magic-toggle:active {
+            transform: scale(0.95);
+        }
+
+        .magic-toggle::before {
+            content: '✨';
             transition: all 0.3s ease;
         }
 
-        .easter-egg-toggle:hover {
-            background: #ff5252;
-            transform: scale(1.1);
+        .magic-toggle.active::before {
+            content: '🌙';
+            transform: rotate(180deg);
         }
     </style>
 </head>
@@ -166,14 +248,13 @@
         <div class="star star-3">🌟</div>
         <div class="star star-4">⭐</div>
 
-        <!-- 六一祝福 -->
+        <!-- 六一祝福卡片 -->
         <div class="children-day-wish" onclick="showWish()">
-            🎈 六一快乐！点击我 🎈
+            🎈 六一快乐！点击获取祝福 🎈
         </div>
 
-        <!-- 彩蛋开关按钮 -->
-        <button class="easter-egg-toggle" onclick="toggleDecorations()">
-            🎪 彩蛋
+        <!-- 魔法开关按钮 -->
+        <button class="magic-toggle" onclick="toggleDecorations()" title="切换魔法模式">
         </button>
     </div>
 
@@ -367,12 +448,16 @@
         // 祝福消息点击效果
         function showWish() {
             const wishes = [
-                '🎈 六一儿童节快乐！永远保持童心！',
-                '🌟 愿你永远拥有孩子般的纯真笑容！',
-                '🎪 童年不老，快乐永远！',
-                '🎨 愿你的世界永远充满色彩！',
-                '🎵 让快乐的歌声永远伴随你！',
-                '🎁 每一天都是最好的礼物！'
+                '🎈 愿你的眼中总有光芒，活成你想要的模样！',
+                '🌟 童年只有一次，成长不会再来，愿你珍惜每一天！',
+                '� 愿你像小熊一样勇敢，像小鸟一样自由，像彩虹一样多彩！',
+                '🎨 愿你拥有童真、童心、童颜，保持儿童时的笑脸！',
+                '� 童年很短未来很长，愿你成长的每一天所遇皆甜！',
+                '🎁 愿你的生活充满欢笑和惊喜，快乐健康成长！',
+                '✨ 愿你在成长的路上遇见彩色的梦和超级多的小美好！',
+                '� 愿你的童年像一首美妙的歌曲，永远充满动听的旋律！',
+                '� 愿你的六一儿童节像彩虹一样绚丽多彩，带给你无尽的快乐！',
+                '� 童年的快乐是世界上最美好的礼物，愿你永远快乐！'
             ];
 
             const randomWish = wishes[Math.floor(Math.random() * wishes.length)];
@@ -405,36 +490,45 @@
             }, 3000);
         }
 
-        // 彩蛋装饰显示/隐藏切换
+        // 魔法模式切换
         function toggleDecorations() {
             const decorations = document.getElementById('children-day-decorations');
-            const button = document.querySelector('.easter-egg-toggle');
+            const button = document.querySelector('.magic-toggle');
 
             if (decorations.style.display === 'none') {
                 decorations.style.display = 'block';
-                button.innerHTML = '🎪 隐藏';
-                button.style.background = '#4ecdc4';
+                button.classList.remove('active');
+                button.title = '关闭魔法模式';
+
+                // 添加魔法出现效果
+                decorations.style.animation = 'magicAppear 0.8s ease-out forwards';
             } else {
                 decorations.style.display = 'none';
-                button.innerHTML = '🎪 彩蛋';
-                button.style.background = '#ff6b6b';
+                button.classList.add('active');
+                button.title = '开启魔法模式';
             }
         }
 
-        // 添加爆炸动画样式
+        // 添加动画样式
         const style = document.createElement('style');
         style.textContent = `
             @keyframes explosion {
                 0% { transform: scale(1) rotate(0deg); opacity: 1; }
-                50% { transform: scale(2) rotate(180deg); opacity: 0.8; }
-                100% { transform: scale(3) rotate(360deg); opacity: 0; }
+                50% { transform: scale(2.5) rotate(180deg); opacity: 0.8; }
+                100% { transform: scale(4) rotate(360deg); opacity: 0; }
             }
 
             @keyframes wishShow {
-                0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
-                20% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
-                80% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-                100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+                0% { transform: translate(-50%, -50%) scale(0) rotate(-10deg); opacity: 0; }
+                20% { transform: translate(-50%, -50%) scale(1.15) rotate(2deg); opacity: 1; }
+                80% { transform: translate(-50%, -50%) scale(1) rotate(0deg); opacity: 1; }
+                100% { transform: translate(-50%, -50%) scale(0.9) rotate(5deg); opacity: 0; }
+            }
+
+            @keyframes magicAppear {
+                0% { opacity: 0; transform: scale(0.8); }
+                50% { opacity: 0.7; transform: scale(1.05); }
+                100% { opacity: 1; transform: scale(1); }
             }
         `;
         document.head.appendChild(style);
